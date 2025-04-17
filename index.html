@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GigFloww - Sign Up</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>GigFloww</h1>
+            </div>
+            <p>Join our platform and start your creative gig journey today!</p>
+        </header>
+
+        <main>
+            <form id="signupForm" novalidate>
+                <div class="form-group">
+                    <label for="name" class="required">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                    <div class="error-message" id="name-error"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="required">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                    <div class="error-message" id="email-error"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="skill" class="required">Skill Category</label>
+                    <select id="skill" name="skill" required>
+                        <option value="">Select your skill</option>
+                        <option value="design">Graphic Design</option>
+                        <option value="development">Web Development</option>
+                        <option value="writing">Content Writing</option>
+                        <option value="marketing">Digital Marketing</option>
+                        <option value="video">Video Production</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <div class="error-message" id="skill-error"></div>
+                </div>
+
+                <div class="form-group" id="other-skill-group" style="display: none;">
+                    <label for="other-skill" class="required">Please specify your skill</label>
+                    <input type="text" id="other-skill" name="other-skill">
+                    <div class="error-message" id="other-skill-error"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="portfolio">Portfolio Link (Optional)</label>
+                    <input type="url" id="portfolio" name="portfolio" placeholder="https://">
+                    <div class="error-message" id="portfolio-error"></div>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms" class="required">I agree to the <a href="#" class="terms-link">Terms of Service</a> and <a href="#" class="terms-link">Privacy Policy</a></label>
+                    <div class="error-message" id="terms-error"></div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Join Now</button>
+            </form>
+
+            <div id="confirmation" class="confirmation-message hidden">
+                <div class="confirmation-content">
+                    <i class="fas fa-check-circle"></i>
+                    <h2>Thank You for Signing Up!</h2>
+                    <p>Your GigFloww account is being prepared. We'll send you a confirmation email shortly.</p>
+                    <button class="btn btn-secondary" onclick="resetForm()">Back to Form</button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>© 2025 GigFloww. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- Terms of Service Modal -->
+    <div id="termsModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Terms of Service</h2>
+            <p>By using GigFloww, you agree to:</p>
+            <ul>
+                <li>Provide accurate and complete information</li>
+                <li>Use the platform for legitimate gig opportunities only</li>
+                <li>Respect intellectual property rights</li>
+                <li>Not engage in fraudulent activities</li>
+                <li>Comply with all applicable laws and regulations</li>
+            </ul>
+            <p>We reserve the right to terminate accounts that violate these terms.</p>
+        </div>
+    </div>
+
+    <!-- Privacy Policy Modal -->
+    <div id="policyModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Privacy Policy</h2>
+            <p>GigFloww collects and uses personal information to:</p>
+            <ul>
+                <li>Create and manage your account</li>
+                <li>Connect you with potential clients</li>
+                <li>Improve our services</li>
+                <li>Communicate important updates</li>
+            </ul>
+            <p>We implement security measures to protect your data but cannot guarantee absolute security.</p>
+            <p>We do not sell your personal information to third parties.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
